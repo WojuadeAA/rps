@@ -1,0 +1,112 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+
+        {
+            "name": "debug app in staging environment",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "flutterMode": "debug",
+            "args": [
+                "--dart-define=BASE_URL=https://staging-api.sproutlyhq.com",
+                "--dart-define=KYC_SERVICE_URL=https://dev.kyc-service.sproutlyhq.com", 
+                "--dart-define=FIN_EDU_SERVICE_URL=https://finedu-prep.sproutlyhq.com",
+                "--dart-define=IV=sEemIDqfYBY6yz9v",
+                "--dart-define=KEY=yMzQ0bGP5wMAy3PtUyZPY1G7g6YtFvbx",
+                "--dart-define=ABLY_API_KEY=gfu-Bg.y7oh4g:MtSEtwykNN_y8sH3-v4U4E7WEC8ep0Xthm73RtJnuNU",
+                "--dart-define=ABLY_SPT_CHANNEL=8KX5IFGc3iRf12afA7AI2E2wYSBVwK"  
+            ]
+        },
+        {
+            "name": "debug app in prod environment",
+            "type": "dart",  
+            "request": "launch",
+            "program": "lib/main.dart",
+            "flutterMode": "debug",
+            "args": [
+                "--dart-define=BASE_URL=https://api.sproutlyhq.com",
+                "--dart-define=KYC_SERVICE_URL=https://dev.kyc-service.sproutlyhq.com", 
+                "--dart-define=FIN_EDU_SERVICE_URL=https://finedu-prep.sproutlyhq.com",
+                "--dart-define=IV=sEemIDqfYBY6yz9v",
+                "--dart-define=KEY=yMzQ0bGP5wMAy3PtUyZPY1G7g6YtFvbx",
+                "--dart-define=ABLY_API_KEY=gfu-Bg.y7oh4g:MtSEtwykNN_y8sH3-v4U4E7WEC8ep0Xthm73RtJnuNU",
+                "--dart-define=ABLY_SPT_CHANNEL=8KX5IFGc3iRf12afA7AI2E2wYSBVwK"  
+            ]
+        },
+        {
+            "name": "build release apk",
+            "type": "dart",  
+            "request": "launch",
+            "program": "lib/main.dart",
+            "flutterMode": "release",
+            "args": [
+                "--dart-define=BASE_URL=https://api.sproutlyhq.com",
+                "--dart-define=KYC_SERVICE_URL=https://dev.kyc-service.sproutlyhq.com", 
+                "--dart-define=FIN_EDU_SERVICE_URL=https://finedu-prep.sproutlyhq.com",
+                "--dart-define=IV=sEemIDqfYBY6yz9v",
+                "--dart-define=KEY=yMzQ0bGP5wMAy3PtUyZPY1G7g6YtFvbx",
+                "--dart-define=ABLY_API_KEY=gfu-Bg.y7oh4g:MtSEtwykNN_y8sH3-v4U4E7WEC8ep0Xthm73RtJnuNU",
+                "--dart-define=ABLY_SPT_CHANNEL=8KX5IFGc3iRf12afA7AI2E2wYSBVwK"  
+            ]
+        },
+        {
+            "name": "build staging apk",
+            "type": "dart",  
+            "request": "launch",
+            "program": "lib/main.dart",
+            "flutterMode": "release",
+            "args": [
+                "--dart-define=BASE_URL=https://staging-api.sproutlyhq.com",
+                "--dart-define=KYC_SERVICE_URL=https://dev.kyc-service.sproutlyhq.com", 
+                "--dart-define=FIN_EDU_SERVICE_URL=https://finedu-prep.sproutlyhq.com",
+                "--dart-define=IV=sEemIDqfYBY6yz9v",
+                "--dart-define=KEY=yMzQ0bGP5wMAy3PtUyZPY1G7g6YtFvbx",
+                "--dart-define=ABLY_API_KEY=gfu-Bg.y7oh4g:MtSEtwykNN_y8sH3-v4U4E7WEC8ep0Xthm73RtJnuNU",
+                "--dart-define=ABLY_SPT_CHANNEL=8KX5IFGc3iRf12afA7AI2E2wYSBVwK"  
+            ]
+        },
+      
+        {
+            "name": "Unit Tests",
+            "type": "dart",
+            "request": "launch",
+            "program": "test/"
+        },
+        {
+            "name": "Integration Tests: Launch App",
+            "cwd": "test_integration",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "args": [
+                "--observatory-port=8888",
+                "--disable-service-auth-codes"
+            ]
+        },
+        {
+            "name": "Integration Tests: Launch Driver",
+            "cwd": "test_integration",
+            "request": "launch",
+            "type": "dart",
+            "program": "test_driver/main_test.dart",
+            "env": {
+                "VM_SERVICE_URL": "http://127.0.0.1:8888/"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Integration Tests",
+            "configurations": [
+                "Integration Tests: Launch App",
+                "Integration Tests: Launch Driver"
+            ]
+        }
+    ]
+}
